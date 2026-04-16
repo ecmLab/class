@@ -40,7 +40,7 @@ class Solver(Module.Solver):
     def loadModel(self, path:str, name:str):
         '''Load trained model
         '''
-        return torch.load(path+f'{name}.pth', map_location=self.device)
+        return torch.load(path+f'{name}.pth', map_location=self.device, weights_only=False)
 
     def saveModel(self, path:str, name:str, model_dict:dict):
         '''Save trained model (the whole model)
